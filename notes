@@ -1,0 +1,1 @@
+* restart VSC terminal after changing CMakeLists file, lest changes don't apply
