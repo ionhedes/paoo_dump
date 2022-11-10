@@ -11,4 +11,4 @@ Composed::Composed(int int_val, float float_val)
             << first_field << ", " << second_field << std::endl;
 }
 
-unsigned Composed::instance_counter = 0; // < Item 4: this is a possibly dangerous way of initializing the non-local static var;
+unsigned Composed::instance_counter = 0; // < Item 4: is this safer because the static member is private?

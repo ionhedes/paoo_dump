@@ -14,6 +14,8 @@ int main()
     Context::get_context().print_current_context();
 
     Composed composed(int_val, float_val);
+    Composed composed_copy(composed);
+    
     Base base_a(composed);
     Base base_b(composed);
     Derived derived_a(composed);
@@ -21,6 +23,7 @@ int main()
     base_a.do_first_action();
     base_b.do_second_action(int_val);
     derived_a.do_third_action();
+
 
     // Item 5: destructor will now be called for all local objects
     return 0;

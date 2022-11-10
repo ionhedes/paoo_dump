@@ -2,8 +2,14 @@
 
 class Composed 
 {
+
 public:
     Composed(int, float);
+
+    /**
+     * Item 5: copy constructor and assignment operator will
+     * be generated automatically for this class
+     */
 
 private:
 
@@ -11,10 +17,4 @@ private:
     const float second_field;
     static unsigned instance_counter;
 
-    //~Composed(); // < I think the default destructor function generation cannot be disallowed because of Base class
-    
-    /**
-     * Item 6: Disallowing the creation of a default assignment operator overload
-    */
-    Composed& operator=(const Composed&);
 };

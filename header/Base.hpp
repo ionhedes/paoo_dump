@@ -1,9 +1,15 @@
 #pragma once
 
 #include "Composed.hpp"
+#include "Uncopyable.hpp"
 
-class Base 
+/**
+ *  Item 6: the Uncopyable base class is inherited to deny
+ * creation of default copy constructor and assignment operator;
+ */
+class Base : private Uncopyable
 {
+
 private:
 
     int first_field;
@@ -12,17 +18,12 @@ private:
      * Item 5:
      * - because we have a reference member, the compiler will not
      * generate an assignment operator function;
+     * 
+     * - when creating Base object, the Composed constructor will not
+     * be called for second_field, because it is a reference,
+     * not an object in itself
     */
     Composed& second_field;
-
-    /**
-     * Item 6: 
-     * - disallowing the creation of a public default copy constructor
-     * and assignment operator (which won't be generated here nonetheless);
-    */
-    Base(const Base&);
-    Base& operator=(Base&);
-
 
 public:
 

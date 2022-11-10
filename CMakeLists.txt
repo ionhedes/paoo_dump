@@ -6,6 +6,7 @@ set(CMAKE_CXX_EXTENSIONS_OFF OFF)
 
 add_executable(
     ${PROJECT_NAME}
+    header/Uncopyable.hpp
     header/Composed.hpp
     source/Composed.cpp
     header/Context.hpp

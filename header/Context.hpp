@@ -1,5 +1,7 @@
 #pragma once
 
+#include "Uncopyable.hpp"
+
 /**
  * Item 4: The Context class should be an util class,
  * containing info to be use by all other classes
@@ -7,9 +9,13 @@
  * of this class, so we implement the class using the
  * Singleton patter, thus avoiding using non-local static
  * Context variables uninitialized.
+ * 
+ * Item 6: the Uncopyable base class is inherited to deny
+ * creation of default copy constructor and assignment operator;
 */
-class Context
+class Context : private Uncopyable
 {
+
 private:
     int a;
     int b;
@@ -21,14 +27,6 @@ private:
      * (even if this one is private)
     */
     Context(int, int);
-
-    /**
-     * Item 6: 
-     * - disallowing the creation of a public default copy constructor
-     * and assignment operator;
-    */
-    Context(Context&);
-    Context& operator=(Context&);
 
 public:
     static Context& get_context();
