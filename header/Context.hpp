@@ -13,7 +13,7 @@
  * Item 6: the Uncopyable base class is inherited to deny
  * creation of default copy constructor and assignment operator;
 */
-class Context : private Uncopyable
+class Context : protected Uncopyable
 {
 
 private:
