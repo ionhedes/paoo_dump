@@ -25,7 +25,7 @@ int main()
     Car meriva(opel_engine, five_gear_t);
     Car tesla(tesla_engine, seven_gear_t);
 
-    // Item 11;
+    // Item 11: making assignment operator exception-safe (and self-assignment-safe too);
     std::cout << "Before operations:\n\n" 
                 << supra << std::endl 
                 << meriva << std::endl 
